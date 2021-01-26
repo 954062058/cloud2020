@@ -1,0 +1,15 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud-provider-payment8001
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://39.97.102.8:3306/nszspringcloud?useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8
+    username: root
+    password: Luo1011
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.ns.springcloud.entities  # 所有Entity 别名类所在包
