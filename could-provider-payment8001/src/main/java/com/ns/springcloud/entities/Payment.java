@@ -16,6 +16,6 @@ import java.io.Serializable;
 @AllArgsConstructor //全参数
 @NoArgsConstructor //空参数
 public class Payment implements Serializable /*序列化*/ {
-    private Long id; //id
+    private Integer id; //id
     private String serial; //流水号
 }

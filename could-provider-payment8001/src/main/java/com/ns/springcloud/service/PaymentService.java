@@ -1,8 +1,8 @@
 package com.ns.springcloud.service;
-
-import com.ns.springcloud.entities.CommonResult;
 import com.ns.springcloud.entities.Payment;
-import org.springframework.data.repository.query.Param;
+
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Service;
 
 /**
  * @author : Nsz
@@ -10,7 +10,9 @@ import org.springframework.data.repository.query.Param;
  * @email : 954062058@qq.com
  * @since : 2021-01-27 10:31
  */
+
 public interface PaymentService {
-    public CommonResult create(Payment payment);
-    public CommonResult getPaymentById(@Param("id") Long id);
+    Payment create(Payment payment);
+
+    Payment getPaymentById(@Param("id") Integer id);
 }
