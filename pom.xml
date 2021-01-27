@@ -92,6 +92,19 @@
         <artifactId>log4j</artifactId>
         <version>${log4j.version}</version>
       </dependency>
+      <!--JPA-->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+        <version>2.2.2.RELEASE</version>
+      </dependency>
+      <!-- 阿里JSON解析器 -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>1.2.47</version>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
 
