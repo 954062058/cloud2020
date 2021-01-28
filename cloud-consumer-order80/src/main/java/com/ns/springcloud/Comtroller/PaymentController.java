@@ -24,7 +24,7 @@ public class PaymentController {
     private RestTemplate restTemplate;
 
     @GetMapping("/payment/create")
-    public CommonResult<Payment>   create(Payment payment){
+    public CommonResult<Payment>   create(Payment payment){ //创造一个create(Payment payment)   读get 写post
         return restTemplate.postForObject(PAYMENT_URL+"/payment/create",payment,CommonResult.class);  //写操作
     }
 

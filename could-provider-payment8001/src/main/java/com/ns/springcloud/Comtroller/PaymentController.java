@@ -28,7 +28,7 @@ public class PaymentController {
         log.info("插入结果为："+commonResult);
         if (commonResult == null) {
             return CommonResult.error();
-        } else return CommonResult.success();
+        } else return CommonResult.success(commonResult);
     }
 
     @GetMapping("/find/{id}")
