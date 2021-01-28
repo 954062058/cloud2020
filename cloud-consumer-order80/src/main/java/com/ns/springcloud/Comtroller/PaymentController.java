@@ -1,9 +1,9 @@
 package com.ns.springcloud.Comtroller;
 
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.*;
 import com.ns.springcloud.entities.CommonResult;
 import com.ns.springcloud.entities.Payment;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
@@ -24,7 +24,7 @@ public class PaymentController {
     private RestTemplate restTemplate;
 
     @GetMapping("/payment/create")
-    public CommonResult<Payment>   create(Payment payment){ //创造一个create(Payment payment)   读get 写post
+    public CommonResult<Payment> create(Payment payment){ //创造一个create(Payment payment)   读get 写post
         return restTemplate.postForObject(PAYMENT_URL+"/payment/create",payment,CommonResult.class);  //写操作
     }
 
