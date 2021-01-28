@@ -35,9 +35,9 @@ public class PaymentController {
     public CommonResult find(@PathVariable(value = "id") String id){
         int i = Integer.parseInt(id);
         Payment commonResult = paymentService.getPaymentById(i);
-        log.info("插入结果为："+commonResult);
+        log.info("查询结果为："+commonResult);
         if (commonResult == null) {
             return CommonResult.error();
-        } else return CommonResult.success();
+        } else return CommonResult.success(commonResult);
     }
 }
