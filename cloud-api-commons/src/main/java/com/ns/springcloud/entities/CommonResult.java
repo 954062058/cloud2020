@@ -44,8 +44,9 @@ public class CommonResult <T> implements Serializable {   //泛型T表示通用
      */
     private T data;
 
-    public CommonResult(Integer code,String message){
-        this(code,message,null);
+    public CommonResult(int code,String message){
+        this.code = code;
+        this.message = message;
     }
 
 
@@ -66,7 +67,7 @@ public class CommonResult <T> implements Serializable {   //泛型T表示通用
     }
 
     public static <T> CommonResult<T> success(int code, String message, T obj) {
-        return new CommonResult<T> (code, message, obj);
+        return new CommonResult<> (code, message, obj);
     }
 
 
