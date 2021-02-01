@@ -19,7 +19,9 @@ eureka:
     fetchRegistry: true
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
-
+  instance:
+    instance-id: payment8002
+    prefer-ip-address: true
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.ns.springcloud.entities  # 所有Entity 别名类所在包
