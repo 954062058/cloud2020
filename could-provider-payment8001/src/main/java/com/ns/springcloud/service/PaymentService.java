@@ -14,5 +14,5 @@ import org.springframework.stereotype.Service;
 public interface PaymentService {
     Payment create(Payment payment);
 
-    Payment getPaymentById(@Param("id") Integer id);
+    Payment getPaymentById(@Param("id") Long id);
 }

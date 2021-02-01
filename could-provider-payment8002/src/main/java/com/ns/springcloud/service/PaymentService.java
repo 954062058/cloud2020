@@ -13,5 +13,5 @@ import org.apache.ibatis.annotations.Param;
 public interface PaymentService {
     Payment create(Payment payment);
 
-    Payment getPaymentById(@Param("id") Integer id);
+    Payment getPaymentById(@Param("id") Long id);
 }

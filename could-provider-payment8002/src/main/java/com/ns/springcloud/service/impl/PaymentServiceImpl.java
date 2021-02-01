@@ -28,7 +28,7 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     @Transactional
-    public Payment getPaymentById(Integer id) {
+    public Payment getPaymentById(Long id) {
         Payment payment = paymentMapper.selectById(id);
         return payment;
     }
