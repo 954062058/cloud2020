@@ -12,9 +12,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient  //启用发现客户端 该注解用于向使用consul或者zookeeper作为注册中心时注册服务
-public class PaymentMain80 {
+public class OrderZKMain80 {
     public static void main(String[] args) {
-        SpringApplication.run(PaymentMain80.class, args);
+        SpringApplication.run(OrderZKMain80.class, args);
         System.out.println("启动完成！");
     }
 }
