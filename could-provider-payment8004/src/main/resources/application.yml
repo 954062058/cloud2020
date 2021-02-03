@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: cloud-payment-service
+    name: cloud-provider-payment #起别名
   cloud:
     zookeeper:
       connect-string: 192.168.136.140:2181   #这个zookeeper的机器加端口号
