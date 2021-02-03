@@ -17,18 +17,22 @@ import javax.annotation.Resource;
 @Slf4j
 @RequestMapping("consumer")
 public class OrderZKController {
-    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
+    public static final String INVOKE_URL = "http://CLOUD-PAYMENT-SERVICE";
 
     @Resource
     private RestTemplate restTemplate;
 
     @GetMapping("/payment/create")
     public CommonResult<Payment> create(Payment payment) { //创造一个create(Payment payment)   读get 写post
-        return restTemplate.postForObject(PAYMENT_URL + "/payment/create", payment, CommonResult.class);  //写操作
+        return restTemplate.postForObject(INVOKE_URL + "/payment/create", payment, CommonResult.class);  //写操作
     }
 
     @GetMapping("/payment/get/{id}")
     public CommonResult<Payment> getPayment(@PathVariable("id") Long id) {
-        return restTemplate.getForObject(PAYMENT_URL + "/payment/find/" + id, CommonResult.class);
+        return restTemplate.getForObject(INVOKE_URL + "/payment/find/" + id, CommonResult.class);
+    }
+    @GetMapping("/payment/zk")
+    public String paymentInfo(){
+        return restTemplate.getForObject(INVOKE_URL+"/payment/zk",String.class);
     }
 }
