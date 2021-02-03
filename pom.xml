@@ -19,6 +19,7 @@
         <module>could-provider-payment8002</module>
         <module>could-provider-payment8004</module>
         <module>cloud-consumerzk-order80</module>
+        <module>cloud-providerconsul-payment8006</module>
     </modules>
 
     <!-- 统一管理 jar 包版本 -->
