@@ -102,6 +102,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <!--自带Ribbon负载均衡-->
         </dependency>
 
     </dependencies>
