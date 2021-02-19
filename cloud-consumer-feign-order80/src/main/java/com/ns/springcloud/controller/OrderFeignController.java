@@ -33,4 +33,10 @@ public class OrderFeignController {
             return CommonResult.error();
         } else return CommonResult.success(commonResult);
     }
+
+    @GetMapping("/payment/feign/timeout")
+    public String paymentFeignTimeout(){
+        //openFeign底层==>ribbon, 客户端一般默认等待1s
+        return paymentFeignService.paymentFeignTimeout();
+    }
 }
