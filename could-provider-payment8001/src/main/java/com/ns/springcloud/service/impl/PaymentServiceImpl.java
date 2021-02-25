@@ -6,6 +6,7 @@ import com.ns.springcloud.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.GetMapping;
 
 
 /**
@@ -31,5 +32,15 @@ public class PaymentServiceImpl implements PaymentService {
     public Payment getPaymentById(Long id) {
         Payment payment = paymentMapper.selectById(id);
         return payment;
+    }
+
+    public String a(){
+        Payment payment = paymentMapper.selectById(5);
+        if (Integer.parseInt(payment.getSerial()) > 0){
+            payment.setSerial(String.valueOf(Integer.parseInt(payment.getSerial()) - 1));
+            paymentMapper.updateById(payment);
+            return "成功";
+        }
+        return "失败";
     }
 }

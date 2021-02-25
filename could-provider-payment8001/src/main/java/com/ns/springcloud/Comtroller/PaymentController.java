@@ -1,7 +1,9 @@
 package com.ns.springcloud.Comtroller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.ns.springcloud.entities.CommonResult;
 import com.ns.springcloud.entities.Payment;
+import com.ns.springcloud.mapper.PaymentMapper;
 import com.ns.springcloud.service.PaymentService;
 
 import lombok.extern.slf4j.Slf4j;
