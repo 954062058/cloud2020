@@ -25,7 +25,7 @@ public class PaymentService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "线程池：" + Thread.currentThread().getName() + "   paymentInfo_TimeOut,id：  " + id + "\t" + "呜呜呜" + " 耗时(秒)" + timeNumber;
+        return "线程池：" + Thread.currentThread().getName() + "   paymentInfo_TimeOut,id：  " + id + "\t" + "呜呜呜" + " 耗时" + timeNumber+"(秒)";
     }
 }
 
