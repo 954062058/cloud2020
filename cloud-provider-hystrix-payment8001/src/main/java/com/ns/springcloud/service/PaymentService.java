@@ -19,7 +19,7 @@ public class PaymentService {
 
     //失败
     public String paymentInfo_TimeOut(Integer id) {
-        int timeNumber = 3;
+        int timeNumber = 5;
         try {
             TimeUnit.SECONDS.sleep(timeNumber);
         } catch (Exception e) {
