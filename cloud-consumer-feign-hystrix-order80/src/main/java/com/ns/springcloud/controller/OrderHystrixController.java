@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @Slf4j
-@RequestMapping("consumer/payment")
 @DefaultProperties(defaultFallback = "payment_Global_FallbackMethod")  //全局配置
 public class OrderHystrixController {
     @Autowired
@@ -29,18 +28,18 @@ public class OrderHystrixController {
     @Value("${server.port}") //端口号
     private String serverPort;
 
-    @HystrixCommand
-    @GetMapping("/hystrix/ok/{id}")
+
+    @GetMapping("consumer/payment/hystrix/ok/{id}")
     public String paymentInfo_OK(@PathVariable("id") Integer id){
         String result = paymentHystrixService.paymentInfo_OK(id)+" ===端口号为：-->"+serverPort;
         log.info("*******result:"+result);
         return result;
     }
 
-    @GetMapping("/hystrix/timeout/{id}")  //get用着玩意  @PathVariable("id")
+    @GetMapping("consumer/payment/hystrix/timeout/{id}")  //get用着玩意  @PathVariable("id")
     @HystrixCommand(fallbackMethod = "paymentInfo_TimeOutHandler", commandProperties = {
             //这个线程的超时时间是3s 三秒后报错启用兜底方法
-            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "2000")  //3秒钟以内就是正常的业务逻辑
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "2000")  //2秒钟以内就是正常的业务逻辑
     })
     public String paymentInfo_TimeOut(@PathVariable("id") Integer id){
         String result = paymentHystrixService.paymentInfo_TimeOut(id)+" ===端口号为：-->"+serverPort;

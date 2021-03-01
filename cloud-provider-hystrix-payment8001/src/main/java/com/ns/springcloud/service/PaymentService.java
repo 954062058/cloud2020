@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class PaymentService {
     //成功
     public String paymentInfo_OK(Integer id) {
+        int i=1/0;
         return "线程池：" + Thread.currentThread().getName() + "   paymentInfo_OK,id：  " + id + "\t" + "哈哈哈";
     }
 
