@@ -29,6 +29,9 @@
             <version>${project.version}</version>
         </dependency>
 
+
+        <!--凡是监控  web和actuator都要有-->
+
         <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-consul-discovery -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -36,10 +39,13 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+        <!-- actuator监控信息完善-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+
+
 
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
         <dependency>
