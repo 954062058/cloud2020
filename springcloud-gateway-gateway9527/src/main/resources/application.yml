@@ -23,8 +23,9 @@ spring:
           predicates:
             - Path=/payment/lb/**   #断言,路径相匹配的进行路由
 #            - After=2017-01-20T17:42:47.789-07:00[America/Denver]  #此路线符合 2017 年 1 月 20 日 17：42 山地时间 （丹佛） 之后提出的任何请求。
-            - After=2021-03-03T15:15:58.081+08:00[Asia/Shanghai] #在这个时间之后访问才有效
-
+            - After=2021-03-03T15:15:58.081+08:00[Asia/Shanghai]   #在这个时间之后访问才有效 可以提前上线 到点起效 秒杀
+            - Cookie=username, ns       #cookie  此路由匹配具有已命名的 Cookie 的请求，其值与常规表达式匹配
+            - Header=X-Request-Id, \d+  #如果请求的header命名为其值与常规表达式匹配（即其值为一个或多个数字），则此路由匹配。X-Request-Id\d+
 eureka:
   instance:
     hostname: cloud-gateway-service
