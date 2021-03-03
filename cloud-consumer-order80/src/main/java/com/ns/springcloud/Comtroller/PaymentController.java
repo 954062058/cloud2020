@@ -34,6 +34,19 @@ public class PaymentController {
         return restTemplate.getForObject(PAYMENT_URL+"/payment/find/"+id,CommonResult.class);
     }
 
+    @GetMapping("/payment/discovery")
+    public Object discovery(){ //   读get 写post
+        return restTemplate.getForObject(PAYMENT_URL+"/payment/discovery",Object.class);  //写操作
+    }
+
+    @GetMapping("/payment/lb")
+    public String  lb(){ //  读get 写post
+        return restTemplate.getForObject(PAYMENT_URL+"/payment/lb",String.class);  //写操作
+    }
+
+
+
+
     @GetMapping("/payment/getForEntity/{id}")
     public CommonResult<Payment> getPayment2(@PathVariable("id") Long id){
         ResponseEntity<CommonResult> entity = restTemplate.getForEntity(PAYMENT_URL + "/payment/find/" + id, CommonResult.class);

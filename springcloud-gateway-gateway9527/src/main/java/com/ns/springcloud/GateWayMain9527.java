@@ -9,8 +9,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableEurekaClient
 public class GateWayMain9527 {
     public static void main(String[] args) {
-            SpringApplication.run( GateWayMain9527.class,args);
-        }
+
+        //TODO 这个springCloud使用SR1会报错
+        SpringApplication.run(GateWayMain9527.class, args);
+    }
 }
  
  
